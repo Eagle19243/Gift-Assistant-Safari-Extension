@@ -1,7 +1,7 @@
 {
-  "name": "giftibly",
+  "name": "giftibly-gift-assistant",
   "version": "1.0.0",
-  "description": "Giftibly(Safari Extension)",
+  "description": "Giftibly | Gift Assistant(Safari Extension)",
   "repository": "",
   "main": "gulpfile.js",
   "devDependencies": {

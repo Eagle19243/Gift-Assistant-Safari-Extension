@@ -1,4 +1,4 @@
-# Giftibly Safari Extension
+# Giftibly | Gift Assistant Safari Extension
 
 ## Developing
 
