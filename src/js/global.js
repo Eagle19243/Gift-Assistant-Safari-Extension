@@ -29,8 +29,6 @@ function handleMessage(msgEvt) {
             item = msgEvt.message["itemData"];
             unknownWebsite = msgEvt.message["unknownWebsiteData"];
             popover.startPopup(item, unknownWebsite);
-        } else {
-            
         }
     }
 }

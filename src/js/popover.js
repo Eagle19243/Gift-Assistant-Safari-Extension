@@ -3,14 +3,6 @@ var global = safari.extension.globalPage.contentWindow;
 var item;
 var unknownWebsite;
 
-
-$(document).on('click', '#settings-button', function() { //show settings tab
-    showSettings();
-});
-
-// Key up filter
-$(document).on('keyup', '#input-search', onSearch);
-
 function getOriginURL() {
     var url = new URL(safari.application.activeBrowserWindow.activeTab.url);
     window.product_url = url.origin;
@@ -92,7 +84,6 @@ function startPopup(itemData, unknownWebsiteData) {
 }
 
 function showItemFound() {
-    
     $('#content').css({'opacity': 0})
         .slideDown(1000)
         .animate(
@@ -219,7 +210,7 @@ function getItemBottomDiv() {
                     '</span>Create New Basket' +
                 '</div>';
             
-            return htmlCode;
+    return htmlCode;
 }
 
 // Iterate basket list
@@ -247,7 +238,6 @@ function getBasketList() {
 
 // Add search bar listener
 function addBasketListeners(skipSearchListener) {
-
     // Iterate save buttons and add listeners
     var saveButton = document.getElementsByClassName('save-button');
     for (var i = 0; i < saveButton.length; i++) {
@@ -281,18 +271,18 @@ function save(basketName, basketId) {
         url: site_name + "/api/v1/baskets/add",
         type: 'POST',
         headers: { 'Authorization' : giftibly_token_string },
-         data: {
-          product_api_id: item.apiID,
-          basket_id: basketId,
-          price: item.price,
-          title: item.name,
-          merchant_url: getOriginURL(),
-          product_url: getOriginURL(),
-          merchant_name: item.merchant_name,
-          color: item.color,
-          size: item.size,
-          description: final_description, 
-          product_image_url: item.image
+        data: {
+            product_api_id: item.apiID,
+            basket_id: basketId,
+            price: item.price,
+            title: item.name,
+            merchant_url: getOriginURL(),
+            product_url: getOriginURL(),
+            merchant_name: item.merchant_name,
+            color: item.color,
+            size: item.size,
+            description: final_description, 
+            product_image_url: item.image
         },
         success: function (data) {
           window.response = JSON.stringify(data);
@@ -454,7 +444,14 @@ function onSearch() {
             $(this).show();
             itemsFound++;
         }
-
     });
-
 }
+
+(function(){
+    $(document).on('click', '#settings-button', function() { //show settings tab
+        showSettings();
+    });
+    
+    // Key up filter
+    $(document).on('keyup', '#input-search', onSearch);
+})();

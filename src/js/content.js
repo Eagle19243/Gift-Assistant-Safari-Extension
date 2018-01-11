@@ -33,19 +33,21 @@ function handleMessage(msgEvt){
     }
 }
 
-if ($('#ga_logged_in')[0]) {
-    var token_string = $('#ga_logged_in').data('token');
-    postMessage("from_injected", {"type": "loggin_status", logged_in: true,  token: token_string});
-} else if ($('#ga_logged_out')[0]) {
-    postMessage("from_injected", {"type": "loggin_status", logged_in: false});
-}
+(function(){
+    if ($('#ga_logged_in')[0]) {
+        var token_string = $('#ga_logged_in').data('token');
+        postMessage("from_injected", {"type": "loggin_status", logged_in: true,  token: token_string});
+    } else if ($('#ga_logged_out')[0]) {
+        postMessage("from_injected", {"type": "loggin_status", logged_in: false});
+    }
 
-$(document).ready(function() {
-    $('#gift_assistant_link').remove();
-    $('.ga_button').remove();
-});
+    $(document).ready(function() {
+        $('#gift_assistant_link').remove();
+        $('.ga_button').remove();
+    });
 
-$(document).on('turbolinks:load', function() {
-    $('#gift_assistant_link').remove();
-    $('.ga_button').remove();
-});
+    $(document).on('turbolinks:load', function() {
+        $('#gift_assistant_link').remove();
+        $('.ga_button').remove();
+    });
+})();
