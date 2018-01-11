@@ -1,0 +1,185 @@
+#settings-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    margin-top: 35px;
+    border-top: 1px solid #f1f1f1;
+}
+.settings_link{
+    text-decoration: none;
+    color: #5d5d5d;
+    display: block;
+}
+#settings-list:hover {
+    cursor: pointer;
+}
+#settings-list li {
+    padding: 15px 10px 15px 10px;
+    text-align: left;
+    font-size: 13px;
+    transition: .3s;
+}
+#settings-list li:hover {
+    background-color: #f1f1f1;
+}
+#settings-list li i {
+    color: #888;
+    float: right;
+    margin-top: 3px;
+}
+#not-user-button span{
+    color: #5d5d5d;
+    font-weight: bold;
+    text-decoration: underline;
+}
+#compare-item-div{
+    overflow-y: scroll;
+    height: 457px;
+}
+#compare-item-div a {
+    color: #5d5d5d;
+    text-decoration: none;
+    font-size: 13px;
+}
+#compare-item-title {
+    display: block;
+    margin: 10px 10px 0 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 24px;
+    color: #999;
+}
+.assistant-title{
+    color: #9a9a9a;
+    border-bottom: 1px solid #b7b7b7;
+    margin: 40px 20px 15px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.hr-comparison{
+    border-top: 2px solid #f1f1f1;
+    margin: 7px; 50px;
+}
+.compare-item {
+    padding: 10px;
+}
+.compare-image-div {
+    display: block;
+    padding: 5px;
+    text-align: center;
+    background-color: #fff;
+    text-decoration: none;
+    transition: .3s;
+}
+.compare-image-div:hover {
+    background-color: #f1f1f1;
+}
+.compare-image {
+    height: 90px;
+    border-radius: 6px;
+}
+.compare-name {
+    margin-top: 10px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-weight: bold;
+}
+.compare-price {
+    margin-bottom: 6px;
+    font-size: 15px;
+    color: #5d5d5d;
+    text-align: center;
+    margin-top: 8px;
+}
+a#compare-link:hover{
+    text-decoration: none;
+}
+#compare-more {
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #b9b9b9;
+    text-decoration: none;
+    transition: .3s;
+}
+#compare-more:hover{
+    background: #f1f1f1;
+}
+.report_problem{
+    margin-top: 40px;
+    margin-left: 15px;
+}
+.report_problem span{
+    margin-left: 12px;
+    font-size: 14px;
+    color: #5d5d5d;
+}
+.report_problem button{
+    display: block;
+    margin: 10px auto 20px;
+    padding: 5px 35px;
+    font-size: 14px;
+}
+.checkbox{
+    margin-left: 20px;
+}
+.checkbox label{
+    min-height: 20px;
+    color: #5d5d5d;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 5px !important;
+}
+.checkbox label:before{
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    top: -1px;
+    margin-left: -20px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    background-color: #eaeaea;
+    outline: none;
+}
+.checkbox label:after{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 4px;
+    top: 3px;
+    margin-left: -20px;
+    font-size: 11px;
+}
+.checkbox input[type="checkbox"]:checked + label::after{
+    color: #5d5d5d;
+}
+.checkbox input[type="checkbox"]:checked + label::after{
+    font-family: "FontAwesome";
+    content: "\f00c";
+}
+.checkbox input[type="checkbox"]{
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+    position: absolute;
+    margin-left: -20px;
+    width: 20px;
+    height: 20px;
+}
+.report_problem input{
+    margin-bottom: 10px;
+}
+.problem_title{
+    font-weight: bold;
+}
+.check_all{
+    color: #aeaeae;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
