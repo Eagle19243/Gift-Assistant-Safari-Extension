@@ -16,6 +16,8 @@ function postMessage(messageName, messageData) {
 }
 
 function handleMessage(msgEvt){
+    if (window.top !== window) return;
+
     if (msgEvt.name == "from_global") {
         if (msgEvt.message["type"] == "loggin_status") {
             if (msgEvt.message["logged_in"]) {
@@ -27,7 +29,13 @@ function handleMessage(msgEvt){
             if (msgEvt.message["action"] == "getItem") {
                 var website = location.hostname.toLowerCase();
                 var websiteData = getItem(website);
-                postMessage("from_injected", {"type": "got_item", "itemData": websiteData, "unknownWebsiteData": isWebsiteUnknown(website)});
+                
+                postMessage("from_injected", {
+                    "type": "got_item", 
+                    "itemData": websiteData, 
+                    "unknownWebsiteData": isWebsiteUnknown(website)
+                });
+                isGotItem = true;
             }
         }
     }

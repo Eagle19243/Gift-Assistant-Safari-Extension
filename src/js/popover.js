@@ -3,6 +3,7 @@ var global = safari.extension.globalPage.contentWindow;
 var item;
 var unknownWebsite;
 
+
 function getOriginURL() {
     var url = new URL(safari.application.activeBrowserWindow.activeTab.url);
     window.product_url = url.origin;
@@ -25,18 +26,18 @@ function startPopup(itemData, unknownWebsiteData) {
     item.size = item.size.replace(/^\s+|\s+$|\s+(?=\s)/g, "");
     item.color = item.color.replace(/^\s+|\s+$|\s+(?=\s)/g, "");
     window.giftibly_token_string = "Token " + localStorage.getItem("giftibly_token");
-
+    
     if (item.merchant_name && localStorage.getItem('giftibly_token') != "") {
         $('#back-button').hide();
 
-        safari.extension.popovers[0].height = 465;
+        safari.extension.popovers[0].height = 496;
 
         $.ajax({
             dataType: 'json',
             url: site_name + "/api/v1/baskets/",
             type: 'GET',
             headers: { 'Authorization' : giftibly_token_string },
-            success: function (newdata) {        
+            success: function (newdata) {     
                 window.basket_list = newdata.data;
                 window.customer_name = newdata.header.customer_name;
                 showItemFound();
@@ -52,7 +53,6 @@ function startPopup(itemData, unknownWebsiteData) {
             error: function(){
               console.log("Cannot get basket data");
             }
-            
         });
     }
     else if(localStorage.getItem('giftibly_token') == "" || localStorage.getItem('giftibly_token') == 'null') { //checks to see if user is authenticated
