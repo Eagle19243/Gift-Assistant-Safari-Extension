@@ -28,7 +28,7 @@ gulp.task('minifyCss', function() {
 
 gulp.task('minifyJs', function (cb) {
   pump([
-      gulp.src('./' + jsDir + '/*.js')
+      gulp.src('./' + jsDir + '/**/*.js')
       .pipe(rename({suffix: '.min'})),
       uglify({
         compress: {
