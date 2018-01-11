@@ -43,11 +43,11 @@
 				<key>Include By Default</key>
 				<true/>
 				<key>Label</key>
-				<string>Giftibly</string>
+				<string>Giftibly | Gift Assistant</string>
 				<key>Popover</key>
 				<string>popover</string>
 				<key>Tool Tip</key>
-				<string>Giftibly</string>
+				<string>Giftibly | Gift Assistant</string>
 			</dict>
 		</array>
 	</dict>
